@@ -1,6 +1,6 @@
 import { InputHTMLAttributes } from "react";
 import { styled } from "styled-components";
-import { SearchIconSvg } from "./search-icon";
+import { SearchIconSvg } from "./icons/search-icon";
 
 export const PrimaryInput = styled.input`
     font-family: inherit;
@@ -34,12 +34,15 @@ export const InputContainer = styled.div`
     }
 `
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement>{}
+interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
+    value: string
+    handleChange: (value: string) => void
+}
 
 export function PrimaryInputWSearchIcon(props: InputProps){
     return(
          <InputContainer>
-            <PrimaryInput {...props} />
+            <PrimaryInput onChange={(event:any) => props.handleChange(event.target.value)} {...props} />
             <SearchIconSvg />
          </InputContainer>
     )

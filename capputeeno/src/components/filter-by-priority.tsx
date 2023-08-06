@@ -2,7 +2,7 @@ import { useFilter } from '@/hooks/useFilter';
 import { FilterPriority } from '@/types/filter-priority';
 import { useState } from 'react';
 import { styled } from 'styled-components';
-import { ArrowIcon } from './arrow-icon';
+import { ArrowIcon } from './icons/arrow-icon';
 
 interface FilterByPriorityProps{
 
@@ -36,6 +36,7 @@ const FilterContainer = styled.div`
 `
 
 const PrioriryFilter = styled.ul`
+    z-index: 10;
     position: absolute;
     background: #FFFFFF;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
