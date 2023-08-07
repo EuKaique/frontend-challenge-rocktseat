@@ -16,16 +16,21 @@ const FilterList = styled.ul`
 
 const FilterItem = styled.li<FilterItemProps>`
     font-family: inherit;
-    font-size: 16px;
-    font-weight: ${props => props.selected ? 600 : 400};
-    line-height: 22px;
+    font-size: 12px;
+    font-weight: ${(props:any) => props.selected ? 600 : 400};
+    line-height: 18px;
     letter-spacing: 0em;
     text-align: center;
-    color: ${props => props.selected ? '#41414D' : 'var(--text-dark)'};
+    color: ${(props:any) => props.selected ? '#41414D' : 'var(--text-dark)'};
 
-    border-bottom: ${props => props.selected ? '4px solid #FFA585' : ''};
+    border-bottom: ${(props:any) => props.selected ? '4px solid #FFA585' : ''};
 
     cursor: pointer;
+
+    @media (min-width: ${(props:any) => props.theme.desktopBreakpoint}){
+        font-size: 16px;
+        line-height: 22px;
+    }
 `
 
 export function FilterByType(){

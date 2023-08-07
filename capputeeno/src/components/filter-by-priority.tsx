@@ -46,6 +46,7 @@ const PrioriryFilter = styled.ul`
 
     list-style: none;
     top: 100%;
+    right: 8px;
     width: 250px;
 
     li{

@@ -4,13 +4,13 @@ import { SearchIconSvg } from "./icons/search-icon";
 
 export const PrimaryInput = styled.input`
     font-family: inherit;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 22px;
+    line-height: 20px;
     letter-spacing: 0em;
-    text-align: center;
+    text-align: left;
 
-    width: 352px;
+    width: 100%;
     padding: 10px 16px;
     border-radius: 8px;
     border: none;
@@ -18,11 +18,16 @@ export const PrimaryInput = styled.input`
 
     background-color: var(--bg-secondary);
     color: var(--text-dark);
+
+    @media (min-width: ${(props:any) => props.theme.desktopBreakpoint}){
+        font-size: 14px;
+        line-height: 22px;
+    }
 `
 
 export const InputContainer = styled.div`
     position: relative;
-    width: 352px;
+    width: 250px;
 
     svg{
         position: absolute;
@@ -31,6 +36,10 @@ export const InputContainer = styled.div`
         transform: translateY(-50%);
 
         cursor: pointer;
+    }
+
+    @media (min-width: ${(props:any) => props.theme.desktopBreakpoint}){
+        width: 352px;
     }
 `
 
