@@ -17,6 +17,8 @@ const Button = styled.button`
     background-color: transparent;
     border: none;
 
+    margin-bottom: 1.6rem;
+
     cursor: pointer;
 `
 

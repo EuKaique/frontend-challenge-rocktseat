@@ -1,10 +1,12 @@
 import { formatPrice } from "@/utils/format-price"
 import { styled } from "styled-components"
+import { useRouter } from "../../node_modules/next/navigation"
 
 interface ProductCardProps {
     image: string
     title: string
     price: number
+    id: string
 }
 
 const Card = styled.div`
@@ -57,14 +59,19 @@ const Card = styled.div`
             margin: 8px 0;
         }
     }
+    cursor: pointer;
 
 `
 
 export function ProductCard(props: ProductCardProps){
+    const router = useRouter()
+    const handleNavigate = () => {
+        router.push(`/product?id=${props.id}`)
+    }
     const price = formatPrice(props.price)
 
     return(
-        <Card>
+        <Card onClick={handleNavigate}>
             <img src={props.image} alt={props.title}/>
             <div>
                 <h3>{props.title}</h3>
