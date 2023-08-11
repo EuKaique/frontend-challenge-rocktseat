@@ -8,7 +8,6 @@ import { useFilter } from "./useFilter";
 const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
 
 const fetcher = (query: string): AxiosPromise<ProductsFetchResponse> => {
-
     return axios.post(API_URL, { query })
 }
 
