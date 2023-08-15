@@ -1,11 +1,15 @@
+"use client"
+
 import { ProductsFetchResponse } from "@/types/products-fetch-response";
 import { mountQuery } from "@/utils/graphql-filters";
-import { useDeferredValue } from "react";
+import { useDeferredValue, useEffect } from "react";
 import { useQuery } from "../../node_modules/@tanstack/react-query/build/lib/useQuery";
 import axios, { AxiosPromise } from "../../node_modules/axios/index";
 import { useFilter } from "./useFilter";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL as string;
+const url = typeof window !== 'undefined' ? `${window.location.href}` : ''
+const urlCurrent = url.split(":")[1]
+const API_URL = "http:" + urlCurrent + ":3333";
 
 const fetcher = (query: string): AxiosPromise<ProductsFetchResponse> => {
     return axios.post(API_URL, { query })
