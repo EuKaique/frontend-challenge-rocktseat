@@ -1,6 +1,7 @@
 import { formatPrice } from "@/utils/format-price"
 import { styled } from "styled-components"
 import { useRouter } from "../../node_modules/next/navigation"
+import { Divider } from "./divider"
 
 interface ProductCardProps {
     image: string
@@ -49,15 +50,8 @@ const Card = styled.div`
         align-items: start;
         justify-content: center;
         flex-direction: column;
-        padding: 8px 0px;
-
-        div{
-            width: 228px;
-            height: 1.1px;
-            background-color: var(--shapes);
-            padding: 0;
-            margin: 8px 0;
-        }
+        padding: 8px 12px;
+        width: 100%;
     }
     cursor: pointer;
 
@@ -75,7 +69,7 @@ export function ProductCard(props: ProductCardProps){
             <img src={props.image} alt={props.title}/>
             <div>
                 <h3>{props.title}</h3>
-                <div></div>
+                <Divider />
                 <p>{price}</p>
             </div>
         </Card>

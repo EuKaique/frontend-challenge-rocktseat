@@ -6,6 +6,7 @@ import { Saira_Stencil_One } from 'next/font/google';
 import { PrimaryInputWSearchIcon } from "./primary-input";
 import { CartControl } from "./cart-control";
 import { useFilter } from "@/hooks/useFilter";
+import Link from "next/link";
 
 const sairaStencil = Saira_Stencil_One({ 
   weight: ['400'],
@@ -30,10 +31,11 @@ const TagHeader = styled.header`
     }
 `
 
-const Logo = styled.a`
+const Logo = styled(Link)`
     color: var(--logo-color);
     font-weight: 400;
     line-height: 150%;
+    text-decoration: none;
 
     @media (min-width: ${(props:any) => props.theme.tabletBreakpoint}){
         font-size: 24px;
@@ -48,7 +50,7 @@ export function Header(){
     const { search, setSearch } = useFilter()
     return (
         <TagHeader>
-            <Logo className={sairaStencil.className}>Capputeeno</Logo>
+            <Logo className={sairaStencil.className} href="/">Capputeeno</Logo>
             <div>
                 <PrimaryInputWSearchIcon 
                     placeholder="Procurando por algo específico?"
