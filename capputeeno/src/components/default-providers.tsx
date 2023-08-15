@@ -1,7 +1,7 @@
 "use client"
 
 import { QueryClientProvider } from "../../node_modules/@tanstack/react-query/build/lib/QueryClientProvider";
-import { QueryClient } from '../../../api/node_modules/@tanstack/query-core/build/lib/queryClient';
+import { QueryClient } from '../../node_modules/@tanstack/query-core/build/lib/queryClient';
 import { FilterContextProvider } from "@/contexts/filter-context";
 import { ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
