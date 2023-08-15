@@ -25,10 +25,6 @@ export function DefaultProviders({children}: DefaultProvidersProps){
                     {children}
                 </ThemeProvider>
             </FilterContextProvider>
-            {/* <main className={styles.main}>
-            <FilterBar />
-            <ProductsList />
-            </main> */}
         </QueryClientProvider>
     )
 }
