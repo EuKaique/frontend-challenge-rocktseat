@@ -7,7 +7,7 @@ import { useQuery } from "../../node_modules/@tanstack/react-query/build/lib/use
 import axios, { AxiosPromise } from "../../node_modules/axios/index";
 import { useFilter } from "./useFilter";
 
-const API_URL = "https://capputeeno-eukaique.vercel.app";
+const API_URL = "https://localhost:3333";
 
 const fetcher = (query: string): AxiosPromise<ProductsFetchResponse> => {
     return axios.post(API_URL, { query })

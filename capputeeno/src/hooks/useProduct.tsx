@@ -2,7 +2,7 @@ import { ProductFetchResponse } from "@/types/products";
 import { useQuery } from "../../node_modules/@tanstack/react-query/build/lib/useQuery";
 import axios, { AxiosPromise } from "../../node_modules/axios/index";
 
-const API_URL = "https://capputeeno-eukaique.vercel.app";
+const API_URL = "https://localhost:3333";
 
 const fetcher = (productId: string): AxiosPromise<ProductFetchResponse> => {
     return axios.post(API_URL, { query: `
